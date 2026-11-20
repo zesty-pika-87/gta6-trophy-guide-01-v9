@@ -32,7 +32,7 @@ if (['trophies', 'roadmap', 'missables', 'sources'].includes(tabFromUrl)) active
 
 const isStory = (t) => t.kind === 'story';
 const isMasked = (t) => isStory(t) && hideSpoilers && !earned.has(t.id);
-const chapterLabel = (t) => (t.chapter ? 'Chapter ' + t.chapter : 'story');
+const chapterLabel = (t) => (!t.chapter ? 'story' : t.chapter === 'final' ? 'final mission' : 'Chapter ' + t.chapter);
 
 function save() {
   localStorage.setItem(KEY, JSON.stringify([...earned]));
@@ -221,7 +221,8 @@ function renderDetail() {
   }
   const steps = (t.steps ?? []).map((s) => {
     const refs = (s.s ?? []).map((n) => '[' + n + ']').join(' ');
-    return `<li>${s.t} <span class="src">${refs}</span></li>`;
+    const clean = s.t.replace(/(\s*\[\d+\])+$/, '');
+    return `<li>${clean} <span class="src">${refs}</span></li>`;
   }).join('');
   const srcs = (t.sources ?? []).map((sc) =>
     `<li><b>[${sc.src}] ${srcName(sc.src)}</b> — ${sc.fact} <i>(${sc.role})</i></li>`).join('');
@@ -299,7 +300,7 @@ function renderMissables() {
   const unc = trophies.filter((t) => t.unconfirmed).map((t) =>
     item(t, 'No guide has pinned the method down yet. What is known is written in its steps; nothing is invented.')).join('');
   const dis = trophies.filter((t) => t.disagree).map((t) =>
-    `<div class="mitem"><span class="nm">${t.name}</span> ${badgeHtml(t)}${disagreeBox(t)}</div>`).join('');
+    `<div class="mitem"><span class="nm">${isMasked(t) ? 'Hidden trophy — ' + chapterLabel(t) : t.name}</span> ${badgeHtml(t)}${disagreeBox(t)}</div>`).join('');
   const cleared = trophies.filter((t) => !t.missable && !t.watch && !t.unconfirmed && !t.disagree && !isStory(t))
     .slice(0, 8).map((t) => item(t, 'Safe after the story — no missable step, no open question.')).join('') +
     `<p>…and ${trophies.filter((t) => !t.missable && !t.watch && !t.unconfirmed && !t.disagree && !isStory(t)).length - 8} more cleared trophies with the same status.</p>`;

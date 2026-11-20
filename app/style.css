@@ -92,8 +92,8 @@ button, .importbtn {
 .trow:hover { border-color: var(--pink); }
 .trow.sel { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber); }
 .trow input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--green); cursor: pointer; }
-.trow .nm { font-weight: 700; font-size: 16.5px; color: #fff; }
-.trow .ds { color: var(--muted); font-size: 14px; }
+.trow .nm { display: block; font-weight: 700; font-size: 16.5px; color: #fff; }
+.trow .ds { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
 .trow .meta { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 5px; }
 .trow .gr { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
   padding: 2px 8px; border-radius: 999px; white-space: nowrap; }

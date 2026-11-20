@@ -88,7 +88,7 @@
    "unconfirmed": false,
    "single": false,
    "honesty": null,
-   "disagree": {"a": "PowerPyx: it pops after the first mission of Chapter 2, so it marks finishing Chapter 1. [1]", "b": "GameTrek lists it as 'Complete Chapter 2'. [13]", "safe": "Play through the first Chapter 2 mission — either way, the trophy pops there."}
+   "disagree": {"a": "PowerPyx: it pops after the first mission of Chapter 2, so it marks finishing Chapter 1. [1]", "b": "GameTrek's list places this trophy one chapter later than PowerPyx does. [13]", "safe": "Play through the first Chapter 2 mission — either way, the trophy pops there."}
   },
   {
    "id": 4,
@@ -1254,7 +1254,7 @@
    "count": null,
    "guide": "Go to the Ocean View Rooftop Bar, buy an Apple Martini, and drink it standing by the bar.",
    "steps": [
-    {"t": "Go to the Ocean View Rooftop Bar on Ocean Beach. [1]", "s": [1]},
+    {"t": "Go to the Ocean View Rooftop Bar on the beachfront. [1]", "s": [1]},
     {"t": "Buy an Apple Martini at the bar. [1]", "s": [1]},
     {"t": "Drink it while standing next to the bar, with the view in front of you. [1]", "s": [1]}
    ],
