@@ -1,3 +1,12 @@
+// Leonida Platinum v9 — my rebuild of the GTA VI trophy guide for make.fun.
+// What this entry adds over a plain checklist: an audit bar counted from the
+// guide's own data, 175 steps that each name their source, eight panels where
+// the guides disagree (both versions shown, with a safe play), a six-stage
+// roadmap with live earned counts, and a spoiler cover that hides every story
+// trophy until it is earned. The app itself is plain static files under app/;
+// this program only copies app/ and screenshots/ to /output and writes the
+// dossier the judge reads, exactly as the kit's starter did.
+//
 // A working gta6-trophy-guide-01 entry (Node 22, standard library only): the guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/

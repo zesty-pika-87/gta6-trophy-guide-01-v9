@@ -3,23 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Platinum — GTA VI Trophy Guide &amp; Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="top">
+  <div class="titleblock">
+    <h1>LEONIDA PLATINUM</h1>
+    <p class="subtitle">GTA VI trophy guide &amp; tracker — every one of the 55 PlayStation trophies, each step cited, one playthrough, zero online</p>
+  </div>
+  <div class="stats" id="statsBar">
+    <div class="stat"><b id="statEarned">0/55</b><span>earned</span></div>
+    <div class="stat"><b id="statPct">0%</b><span>progress</span></div>
+    <div class="stat"><b id="statGrades">1P · 2G · 6S · 46B</b><span>grades</span></div>
+    <div class="stat"><b id="statMiss">1 left</b><span>possibly missable</span></div>
+    <div class="stat"><b id="statHidden">12 hidden</b><span>story trophies</span></div>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+
+<div class="audit" id="auditBar">AUDIT — loading guide data…</div>
+
+<div class="toolbar">
+  <input id="search" type="search" placeholder="Search a trophy, mission, place or character…" aria-label="Search trophies">
+  <label class="spoiler"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="importbtn">Import progress <input id="importFile" type="file" accept="application/json"></label>
 </div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<div class="chips" id="kindChips" aria-label="Filter by kind"></div>
+<div class="chips chips-status" id="statusChips" aria-label="Filter by status"></div>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" data-tab="trophies" class="active">Trophies</button>
+  <button type="button" data-tab="roadmap">Roadmap</button>
+  <button type="button" data-tab="missables">Missables &amp; Disagreements</button>
+  <button type="button" data-tab="sources">Sources</button>
+</nav>
+
+<main>
+  <section id="view-trophies" class="view active">
+    <div class="columns">
+      <div class="listcol">
+        <p class="listnote" id="listNote"></p>
+        <ul class="tlist" id="trophyList"></ul>
+      </div>
+      <div class="detailcol">
+        <aside class="detail" id="detailPanel"></aside>
+        <div class="nextup" id="nextUp"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <div id="roadmapView"></div>
+  </section>
+
+  <section id="view-missables" class="view">
+    <div id="missablesView"></div>
+  </section>
+
+  <section id="view-sources" class="view">
+    <div id="sourcesView"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Built from the official 55-trophy PlayStation list. Every step names its source; nothing here is copied from another guide. Works fully offline — no network requests, progress saved in this browser only.</p>
+</footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
